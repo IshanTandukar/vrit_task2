@@ -24,6 +24,7 @@
 }
 
 .task2-container2 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
@@ -36,7 +37,7 @@
 .task2-box3,
 .task2-box4 {
   color: white;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   border-radius: 1rem;
   font-family: "Poppins", sans-serif;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -46,7 +47,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 280px; /* Ensure consistent height across all boxes */
+  /* min-height: 280px; Ensure consistent height across all boxes */
 }
 
 .task2-box1 {
@@ -80,7 +81,6 @@
   line-height: 1.6;
 }
 
-/* Layout for inner content */
 .box-content {
   display: flex;
   align-items: center;
@@ -89,11 +89,11 @@
 }
 
 .box-content.left {
-  flex-direction: row; /* Image left, text right */
+  flex-direction: row;
 }
 
 .box-content.right {
-  flex-direction: row-reverse; /* Image right, text left */
+  flex-direction: row-reverse;
 }
 
 @keyframes float {
@@ -119,21 +119,7 @@
 
 .hover-wrapper {
   transition: all 0.3s ease;
-}
-
-.show-hover {
-  animation: fadeInSlide 0.4s ease;
-}
-
-@keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  position: relative;
 }
 
 .hover-visual {
@@ -142,6 +128,16 @@
   gap: 1.5rem;
   animation: fadeIn 0.3s ease;
   width: 100%;
+  position: relative;
+}
+
+.hover-visual-content {
+  height: 100%;
+}
+
+.hover-text > h2 {
+  margin: 0;
+  padding: 0;
 }
 
 .hover-wrapper:hover .hover-img {
@@ -206,4 +202,32 @@
 .text-wrapper p {
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+.hover-slide-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: 5;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hover-slide-overlay.slide-in {
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: auto;
 }

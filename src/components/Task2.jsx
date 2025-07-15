@@ -38,66 +38,69 @@ const Task2 = () => {
 
       <div className="task2-container2">
         <div
-          className={`task2-box1 hover-wrapper ${
-            hoveredBox === "box1" ? "show-hover" : ""
-          }`}
+          className="task2-box1 hover-wrapper"
           onMouseEnter={() => setHoveredBox("box1")}
           onMouseLeave={() => setHoveredBox(null)}
         >
-          {hoveredBox === "box1" ? (
+          <div className="box-content left">
+            <img
+              src={static1}
+              alt="Start with Clarity"
+              className="static-img"
+            />
+            <div className="text-wrapper">
+              <h1>Start with Clarity</h1>
+              <h3>Step into a better learning path.</h3>
+              <p>
+                Overwhelmed by too many learning options? SkillShikshya provides
+                a clear, curated roadmap from the start. Whether you're a
+                beginner or upskilling, we have a path tailored to your growth.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className={`hover-slide-overlay ${
+              hoveredBox === "box1" ? "slide-in" : ""
+            }`}
+          >
             <HoverContent
               title="Clarity unlocked—stickers, sips, and skills all in one go!"
               image={person1}
               showWow={true}
             />
-          ) : (
-            <div className="box-content left">
-              <img
-                src={static1}
-                alt="Start with Clarity"
-                className="static-img"
-              />
-              <div className="text-wrapper">
-                <h1>Start with Clarity</h1>
-                <h3>Step into a better learning path.</h3>
-                <p>
-                  Overwhelmed by too many learning options? SkillShikshya
-                  provides a clear, curated roadmap from the start. Whether
-                  you're a beginner or upskilling, we have a path tailored to
-                  your growth.
-                </p>
-              </div>
-            </div>
-          )}
+          </div>
         </div>
 
         <div
-          className={`task2-box2 hover-wrapper ${
-            hoveredBox === "box2" ? "show-hover" : ""
-          }`}
+          className="task2-box2 hover-wrapper"
           onMouseEnter={() => setHoveredBox("box2")}
           onMouseLeave={() => setHoveredBox(null)}
         >
-          {hoveredBox === "box2" ? (
+          <div className="box-content right">
+            <div className="text-wrapper">
+              <h1>Learn by Doing</h1>
+              <h3>Practical skills, real projects.</h3>
+              <p>
+                Theory is great, but action is better. At SkillShikshya, you
+                learn by doing. Hands-on projects and real-world scenarios help
+                you build, break, and create—leading to true mastery.
+              </p>
+            </div>
+            <img src={static2} alt="Learn by Doing" className="static-img" />
+          </div>
+
+          <div
+            className={`hover-slide-overlay ${
+              hoveredBox === "box2" ? "slide-in" : ""
+            }`}
+          >
             <HoverContent
               title="Focused faces—learning mode: ON!"
               image={person2}
               showWow={false}
             />
-          ) : (
-            <div className="box-content right">
-              <div className="text-wrapper">
-                <h1>Learn by Doing</h1>
-                <h3>Practical skills, real projects.</h3>
-                <p>
-                  Theory is great, but action is better. At SkillShikshya, you
-                  learn by doing. Hands-on projects and real-world scenarios
-                  help you build, break, and create—leading to true mastery.
-                </p>
-              </div>
-              <img src={static2} alt="Learn by Doing" className="static-img" />
-            </div>
-          )}
+          </div>
         </div>
 
         <div className="task2-box3">
